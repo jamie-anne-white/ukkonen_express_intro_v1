@@ -16,7 +16,7 @@ let index = 0;
 
 app.get('/quotes', (req, res) => {
     console.log('hi from get request');
-    res.send(quotesData);
+    res.send(quotesData.list);
 })
 
 app.get('/randomQuote', (req, res) => {
@@ -27,6 +27,13 @@ app.get('/randomQuote', (req, res) => {
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+
+app.post('/quotes', (req, res) => {
+      console.log('hello from post');;
+      res.sendStatus(200);
+      
+
+  });
 
 app.listen(port, () => {
     console.log("Up and running on port: ", port);
